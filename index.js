@@ -8,11 +8,13 @@ function map (arr, func) {
 }
 
 function reduce (arr, func, startingValue) {
-    let final
+    let final = (!!startingValue) ? startingValue : arr[0]
+    let i = (!!startingValue) ? 0 : 1
 
-    arr.forEach((item) => {
-        final = func(item)
-    })
+    for (; i < arr.length; i ++) {
+        final = func(arr[i], final)
+    }
+
     return final
 
 }
