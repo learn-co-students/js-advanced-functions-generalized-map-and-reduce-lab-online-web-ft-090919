@@ -9,6 +9,14 @@ map = (arr, fn) => {
 function reduce(src, cb, starting){
     let r = (!!starting) ? starting : src[0]
     let i = (!!starting) ? 0 : 1
+
+    // if (!!starting) {
+    //     r = starting
+    //     i = 0
+    // } else {
+    //     r = src[0]
+    //     i = 1
+    // }
   
     for (; i < src.length; i++) {
       r = cb(src[i], r)
